@@ -60,12 +60,16 @@
 </dependency>
 		
 <!-- https://mvnrepository.com/artifact/org.mapstruct/mapstruct -->
-<dependency>
+<!-- <dependency>
     <groupId>org.mapstruct</groupId>
     <artifactId>mapstruct</artifactId>
     <version>${org.mapstruct.version}</version>
-</dependency>	
-
+</dependency>	 -->
+<dependency>
+	<groupId>org.mapstruct</groupId>
+	<artifactId>mapstruct</artifactId>
+	<version>${org.mapstruct.version}</version>
+</dependency>
 <!-- https://mvnrepository.com/artifact/org.ehcache/ehcache -->
 <dependency>
     <groupId>org.ehcache</groupId>
@@ -103,20 +107,22 @@
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>				
+				<artifactId>spring-boot-maven-plugin</artifactId>	
+				
 			</plugin>
 			
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
   				<artifactId>maven-compiler-plugin</artifactId>
+  				<version>3.11.0</version>			
 				<configuration>
 					<source>11</source>
 					<target>11</target>
 					<annotationProcessorPaths>
 						<path>
 							<groupId>org.mapstruct</groupId>
-							<artifactId>mapstruct</artifactId>
-							<version>${org.mapstruct.version}</version>						
+							<artifactId>mapstruct-processor</artifactId>
+							<version>${org.mapstruct.version}</version>
 						</path>
 						<path>
 							<groupId>org.projectlombok</groupId>
