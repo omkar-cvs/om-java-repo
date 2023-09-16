@@ -1,7 +1,5 @@
 package com.oks.web.app.all.be.vo;
 
-import com.oks.web.app.all.be.entity.Emp;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
