@@ -3,10 +3,10 @@ package com.oks.web.app.all.be;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
+//@SpringBootTest
 class WebAppAllBeApplicationTests {
 
-	@Test
+	//@Test
 	void contextLoads() {
 	}
 

@@ -48,12 +48,12 @@ public class EmpController {
 	
 	@PostMapping("/find")
 	public ResponseEntity<EmpResponseVo> getEmp(@Valid @RequestBody EmpRequestVo empRequestVo){
-		System.out.println();
+		logger.info("Enter in EmpController{}:getEmp() \n"+empRequestVo);
 		List<EmpVo> empVoList = new ArrayList<>();
 		EmpVo empVo = empService.getEmp(empRequestVo.getEmpVo());
 		if(empVo!=null)
 			empVoList.add(empVo);
-
+		logger.info("Exit from EmpController{}:getEmp() ");
 		return new ResponseEntity<>(
 				EmpResponseVo.serviceResponse((empVoList.isEmpty()? "There is no such record found":"SUCCESS_MESSAGE"), "SUCCESS", empVoList),
 				HttpStatus.FOUND);
