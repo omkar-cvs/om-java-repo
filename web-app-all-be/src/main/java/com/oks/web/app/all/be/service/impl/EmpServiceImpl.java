@@ -2,8 +2,6 @@ package com.oks.web.app.all.be.service.impl;
 
 import java.util.List;
 
-
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,12 +41,13 @@ public class EmpServiceImpl implements EmpService {
 	}
 
 	@Override
-	@Cacheable(key="#empVo.id")
-	public EmpVo getEmp(EmpVo empVo) {
+	@Cacheable(key="#id")
+	public EmpVo getEmp(Long id) {
 		logger.info("Enter in EmpServiceImp{}:getEmp() ");
+		EmpVo empVo=null;
 		try {
 			empVo = EmpMapper.INSTANCE
-					.convertDOtoVOForEmp(empDao.getEmp(EmpMapper.INSTANCE.convertVOtoDOForEmp(empVo)));
+					.convertDOtoVOForEmp(empDao.getEmp(id));
 		} catch (RuntimeException ex) {
 			logger.error("Emp Data not Found : " + ex);
 			throw new WebAppServiceAllBeException(Constants.INTERNAL_SERVER_ERROR_FIND);

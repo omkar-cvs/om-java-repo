@@ -12,6 +12,6 @@ public interface EmpDao {
 
 	List<Emp> findAllEmp();
 
-	Emp getEmp(Emp emp);
+	Emp getEmp(Long id);
 
 }

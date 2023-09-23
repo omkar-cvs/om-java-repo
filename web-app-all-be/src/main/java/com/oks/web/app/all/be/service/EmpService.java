@@ -13,6 +13,6 @@ public interface EmpService {
 
 	List<EmpVo> findAllEmp();
 
-	EmpVo getEmp(EmpVo empVo);
+	EmpVo getEmp(Long id);
 
 }

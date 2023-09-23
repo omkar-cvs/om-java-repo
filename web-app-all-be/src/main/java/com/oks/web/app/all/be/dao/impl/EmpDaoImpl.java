@@ -23,7 +23,7 @@ public class EmpDaoImpl implements EmpDao {
 
 	@Override
 	public Emp updateEmp(Emp emp) {
-		Emp e = getEmp(emp);
+		Emp e = getEmp(emp.getId());
 		if (e != null) {
 			saveEmp(emp);
 		} else {
@@ -43,8 +43,8 @@ public class EmpDaoImpl implements EmpDao {
 	}
 
 	@Override
-	public Emp getEmp(Emp emp) {
-		Optional<Emp> empOp = empRepository.findById(emp.getId());
+	public Emp getEmp(Long id) {
+		Optional<Emp> empOp = empRepository.findById(id);
 		if (empOp.isPresent()) {
 			return empOp.get();
 		}

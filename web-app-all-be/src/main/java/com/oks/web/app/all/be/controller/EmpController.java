@@ -47,10 +47,10 @@ public class EmpController {
 	}
 	
 	@PostMapping("/find")
-	public ResponseEntity<EmpResponseVo> getEmp(@Valid @RequestBody EmpRequestVo empRequestVo){
-		logger.info("Enter in EmpController{}:getEmp() \n"+empRequestVo);
+	public ResponseEntity<EmpResponseVo> getEmp(@Valid @RequestBody EmpFindRequestVo empFindRequestVo){
+		logger.info("Enter in EmpController{}:getEmp() \n"+empFindRequestVo);
 		List<EmpVo> empVoList = new ArrayList<>();
-		EmpVo empVo = empService.getEmp(empRequestVo.getEmpVo());
+		EmpVo empVo = empService.getEmp(empFindRequestVo.getId());
 		if(empVo!=null)
 			empVoList.add(empVo);
 		logger.info("Exit from EmpController{}:getEmp() ");
