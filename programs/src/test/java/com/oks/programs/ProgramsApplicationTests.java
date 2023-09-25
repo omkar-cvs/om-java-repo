@@ -1,12 +1,12 @@
-package com.oks.web.app.all.be;
+package com.oks.programs;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-//@SpringBootTest
-class WebAppAllBeApplicationTests {
+@SpringBootTest
+class ProgramsApplicationTests {
 
-	//@Test
+	@Test
 	void contextLoads() {
 	}
 
