@@ -6,4 +6,7 @@ public interface Constants {
 	String INTERNAL_SERVER_ERROR_UPDATE = "Internal Server Error: Data Not Updated";
 	String INTERNAL_SERVER_ERROR_FIND_ALL = "Internal Server Error: Records Not Found";
 	String INTERNAL_SERVER_ERROR_DELETE = "Internal Server Error: Record Not Deleted";
+	
+	String SUCCESS_CODE="200";
+	String SUCCESS_MESSAGE="SUCCESS";
 }

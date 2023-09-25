@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.oks.web.app.all.be.constants.Constants;
 import com.oks.web.app.all.be.service.EmpService;
 import com.oks.web.app.all.be.vo.*;
 
@@ -42,8 +43,8 @@ public class EmpController {
 		empVoList.add(empVo);
 
 		return new ResponseEntity<>(
-				EmpResponseVo.serviceResponse("SUCCESS_MESSAGE : Employee saved successfully", "SUCCESS", empVoList),
-				HttpStatus.CREATED);
+				EmpResponseVo.serviceResponse(Constants.SUCCESS_MESSAGE, Constants.SUCCESS_CODE, empVoList),
+				HttpStatus.OK);
 	}
 	
 	@PostMapping("/find")
@@ -55,8 +56,8 @@ public class EmpController {
 			empVoList.add(empVo);
 		logger.info("Exit from EmpController{}:getEmp() ");
 		return new ResponseEntity<>(
-				EmpResponseVo.serviceResponse((empVoList.isEmpty()? "There is no such record found":"SUCCESS_MESSAGE"), "SUCCESS", empVoList),
-				HttpStatus.FOUND);
+				EmpResponseVo.serviceResponse((empVoList.isEmpty()? "There is no such record found":Constants.SUCCESS_MESSAGE), Constants.SUCCESS_CODE, empVoList),
+				HttpStatus.OK);
 	}
 	
 	@PostMapping("/findAll")
@@ -65,8 +66,8 @@ public class EmpController {
 		List<EmpVo> empVoList = empService.findAllEmp();
 		
 		return new ResponseEntity<>(
-				EmpResponseVo.serviceResponse((empVoList.isEmpty()? "There is no such record found":"SUCCESS_MESSAGE"), "SUCCESS", empVoList),
-				HttpStatus.FOUND);
+				EmpResponseVo.serviceResponse((empVoList.isEmpty()? "There is no such record found":Constants.SUCCESS_MESSAGE), Constants.SUCCESS_CODE, empVoList),
+				HttpStatus.OK);
 	}
 	
 	@PostMapping("/delete")
@@ -80,7 +81,7 @@ public class EmpController {
 			empVoList.add(empVo);
 
 		return new ResponseEntity<>(
-				EmpResponseVo.serviceResponse((empVoList.isEmpty()? "There is no such record found":SUCCESS_MESSAGE), "SUCCESS", empVoList),
+				EmpResponseVo.serviceResponse((empVoList.isEmpty()? "There is no such record found":Constants.SUCCESS_MESSAGE), Constants.SUCCESS_CODE, empVoList),
 				HttpStatus.OK);
 	}
 	
@@ -92,8 +93,8 @@ public class EmpController {
 		empVoList.add(empVo);
 
 		return new ResponseEntity<>(
-				EmpResponseVo.serviceResponse("SUCCESS_MESSAGE : Employee updated successfully", "SUCCESS", empVoList),
-				HttpStatus.CREATED);
+				EmpResponseVo.serviceResponse(Constants.SUCCESS_MESSAGE, Constants.SUCCESS_CODE, empVoList),
+				HttpStatus.OK);
 	}
 	
 	@GetMapping("/env")
