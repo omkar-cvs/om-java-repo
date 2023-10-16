@@ -1,4 +1,4 @@
-package com.oks.programs;
+package com.oks.programs.logincal;
 
 public class ArraysRelated {
 	
